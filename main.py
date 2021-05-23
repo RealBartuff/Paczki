@@ -9,7 +9,6 @@ suma_pustych_kilo = 0
 element = float(input())
 while True:
     if element == 0:
-        waga_paczki -= element
         ilosc_paczek += 1
         suma_kilo += waga_paczki
         puste_kilo += maks_paczka - waga_paczki
