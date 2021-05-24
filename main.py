@@ -48,4 +48,4 @@ while True:
 print("Suma wysłanych paczek: ", ilosc_paczek)
 print("Suma wysłanych kilogramów: ", suma_kilo)
 print("Suma pustych kilogramów: ", suma_pustych_kilo)
-print("Najwięcej pustych kilogramów w paczce nr {}: {}".format(nr_najmniejszej, maks_puste))
+print("Najwięcej pustych kilogramów: Paczka nr {}, kilogramów: {}".format(nr_najmniejszej, maks_puste))
