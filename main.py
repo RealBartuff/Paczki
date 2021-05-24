@@ -5,6 +5,9 @@ maks_paczka = 20
 ilosc_paczek = 0
 suma_kilo = 0
 suma_pustych_kilo = 0
+najmniejsza_paczka = 20
+nr_najmniejszej = 0
+maks_puste = 0
 
 element = float(input())
 while True:
@@ -14,7 +17,11 @@ while True:
         puste_kilo += maks_paczka - waga_paczki
         suma_pustych_kilo += puste_kilo
         print("Podano element o wadze 0 kg. Koniec programu. Wszystkie elementy zostały wysłane.")
-        print("Wysłano paczkę o wadze: {}, Puste kilogramy {}".format(waga_paczki, puste_kilo))
+        print("Wysłano paczkę nr {}, o wadze: {}, Puste kilogramy {}".format(ilosc_paczek, waga_paczki, puste_kilo))
+        if waga_paczki < najmniejsza_paczka:
+            najmniejsza_paczka = waga_paczki
+            maks_puste = 20 - najmniejsza_paczka
+            nr_najmniejszej = ilosc_paczek
         break
     if element < 1 or element > 10:
         print("Nieprawidłowa waga elementu (podaj wagę z przedziału od 1 do 10 kg)")
@@ -27,7 +34,11 @@ while True:
         ilosc_paczek += 1
         suma_kilo += waga_paczki
         puste_kilo += maks_paczka - waga_paczki
-        print("Wysłano paczkę o wadze: {}, Puste kilogramy {}".format(waga_paczki, puste_kilo))
+        print("Wysłano paczkę nr {}, o wadze: {}, Puste kilogramy {}".format(ilosc_paczek, waga_paczki, puste_kilo))
+        if waga_paczki < najmniejsza_paczka:
+            najmniejsza_paczka = waga_paczki
+            maks_puste = 20 - najmniejsza_paczka
+            nr_najmniejszej = ilosc_paczek
         suma_pustych_kilo += puste_kilo
         waga_paczki = element
         puste_kilo = 0
@@ -37,3 +48,4 @@ while True:
 print("Suma wysłanych paczek: ", ilosc_paczek)
 print("Suma wysłanych kilogramów: ", suma_kilo)
 print("Suma pustych kilogramów: ", suma_pustych_kilo)
+print("Najwięcej pustych kilogramów w paczce nr {}: {}".format(nr_najmniejszej, maks_puste))
